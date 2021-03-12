@@ -48,13 +48,13 @@ google.com.		133	IN	A	172.217.164.174
 [ec2-user@ip-172-31-38-59 ~]$ 
 ```
 
-## What would be the security concerns you would raise?
+#### What would be the security concerns you would raise?
 When a browser send request to the DNS-Over-TLS proxy server and then proxy server will create TCP connection with cloudflare DNS server, In between one can spoof traffic between browser and dns server and add or edit datagram and send it over the TCP connection.
 
-## How would you integrate that solution in a distributed, microservices-oriented and containerized architecture?
+#### How would you integrate that solution in a distributed, microservices-oriented and containerized architecture?
 We can use it in microservice as it is highly available, scalable. Security is depending on complete architecture of microservice. It can be deployed into kubernetes to scale and highly available and can be easily integrated into miscroservice deployment. We can make use of jenkins to automate the deployment into docker or kubernetes. 
 
-## What other improvements do you think would be interesting to add to the project?
+#### What other improvements do you think would be interesting to add to the project?
 1. Logging can be enabled.
 2. Other DNS-Over-TLS server can be used such as Quad9.
 3. We can use caching features for faster query and better performance.
