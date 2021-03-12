@@ -13,11 +13,11 @@ Note: This is tested on Docker host which is setup on EC2 instance with Amazon L
 1. Download the zip file provided and Extract it
 2. Changed to directory "DNS-OVER-TLS-Proxy"
 3. Create a Docker image using 
-    $ docker image build -t secureDns .
+    - $ docker image build -t secureDns .
 4. Create a Docker container 
-    $ docker run -d --rm -p 53:53/tcp -p 53:53/udp secureDns
+    - $ docker run -d --rm -p 53:53/tcp -p 53:53/udp secureDns
 5. Run dig queries 
-    $ dig @127.0.0.1 google.com 
+    - $ dig @127.0.0.1 google.com 
 
 Note: Look for DNS padding done by Cloudflare
 
