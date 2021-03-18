@@ -15,7 +15,7 @@ Note: This is tested on Docker host which is setup on EC2 instance with Amazon L
 3. Create a Docker image using 
     - $ docker image build -t secureDns .
 4. Create a Docker container 
-    - $ docker run -d --rm -p 53:53/tcp -p 53:53/udp secureDns
+    - $ docker run -d --rm -p 53:53/tcp -p 53:53/udp securedns
 5. Run dig queries 
     - $ dig @127.0.0.1 google.com 
 
@@ -47,18 +47,3 @@ google.com.		133	IN	A	172.217.164.174
 
 [ec2-user@ip-172-31-38-59 ~]$ 
 ```
-
-#### What would be the security concerns you would raise?
-When a browser send request to the DNS-Over-TLS proxy server and then proxy server will create TCP connection with cloudflare DNS server, In between one can spoof traffic between browser and dns server and add or edit datagram and send it over the TCP connection.
-
-#### How would you integrate that solution in a distributed, microservices-oriented and containerized architecture?
-We can use it in microservice as it is highly available, scalable. Security is depending on complete architecture of microservice. It can be deployed into kubernetes to scale and highly available and can be easily integrated into miscroservice deployment. We can make use of jenkins to automate the deployment into docker or kubernetes. 
-
-#### What other improvements do you think would be interesting to add to the project?
-1. Logging can be enabled.
-2. Other DNS-Over-TLS server can be used such as Quad9.
-3. We can use caching features for faster query and better performance.
-4. Update proxy ip in browser setting to handle request from browser.
-5. We can maintain the socket connection for specific time period. This reduce overhead of TLS connection.
-6. Queries can be stored in Database along with the time of query and status, etc.
-
