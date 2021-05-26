@@ -50,6 +50,7 @@ def main():
     Main function
     """
     parser = ArgumentParser(description="DNS to DNS-over-TLS proxy.")
+    
     parser.add_argument("-p", "--port", type=int, default=53, required=False, help="Port on which proxy listen. default: 53")
     parser.add_argument("-d", "--dns", type=str, default="1.1.1.1", required=False, help="Domain server with TLS. default: 1.1.1.1")
     parser.add_argument("-a", "--address", type=str, default="0.0.0.0", required=False, help="Proxy network interface Address. default: 0.0.0.0")
